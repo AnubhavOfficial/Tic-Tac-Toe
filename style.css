@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    color: rgb(44, 51, 59);
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+
+}
+.container {
+    background: #14BDAC;
+    margin: 40px;
+    padding: 40px;
+    border-radius: 25px;
+    
+}
+.title {
+    text-align: center;
+}
+.title span {
+    color: #f0ede6;
+}
+.status-action {
+    display: flex;
+    margin-top: 25px;
+    font-size: 25px;
+    justify-content: space-around;
+    height: 30px;
+}
+
+.status span {
+    color: #f0ede6;
+}
+.reset {
+    cursor: pointer;
+}
+.reset:hover {
+    color: #f0ede6
+}
+.game-grid {
+    background: rgb(44, 51, 59);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 11px;
+    margin-top: 40px;
+}
+
+.game-cell {
+    background: #14BDAC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 130px;
+    width: 130px;
+}
+
+.X,
+.O{
+    cursor:auto;
+}
+.X::before {
+    content: '×';
+    font-size: 140px;
+    color: #e70a0a;
+   
+}
+
+.O::before {
+    content: '○';
+    font-size: 140px;
+    color: #06ff44;
+    
+}
+
+.won::before {
+    
+    animation: animate 1.5s linear infinite;
+}
+.status span1 {
+    color: #fffb07;
+}
+.status span2 {
+    color: #06ff44;
+   
+}
+.status span3 {
+    color: #e70a0a;
+   
+}
+@keyframes animate{
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+@media only screen and (max-width: 1024px) {
+    .game-grid {
+        margin-top: 25px;
+        grid-gap: 8px;
+    }
+    .status-action {
+        font-size: 20px;
+    }
+    .game-cell {
+        height: 110px;
+        width: 110px;
+    }
+    .X::before {
+        font-size: 115px;
+    }
+    .O::before {
+        font-size: 115px;
+    }
+}
+
+@media only screen and (max-width: 548px)
+{
+    .container {
+        margin: 25px;
+        padding: 25px;
+    }
+    .status-action {
+        font-size: 17px;
+    }
+    .game-grid {
+        margin-top: 25px;
+        grid-gap: 7px;
+    }
+    .game-cell {
+        height: 80px;
+        width: 80px;
+    }
+    .X::before {
+        font-size: 85px;
+    }
+    .O::before {
+        font-size: 50px;
+    }
+}
